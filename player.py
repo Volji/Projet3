@@ -33,7 +33,9 @@ class Player:
 	def statusGame(self):
 		return self.end_game,self.game_state
 
-		
+	def statusItems(self):
+		return self.nbObj
+
 	def affichePlayer(self):
 		e = 3
 		self.player = self.canvas.create_image(self.px*self.var.SIZE+e,self.py*self.var.SIZE+e,anchor=NW,image = self.mcgyver[0])
@@ -54,8 +56,7 @@ class Player:
 			self.px = x
 			self.py = y
 			level[y][x] = 0
-			self.nbObj += 1
-			
+			self.nbObj += 1	
 		# Guardian
 		if level[y][x] == 6:
 			self.end_game = True
